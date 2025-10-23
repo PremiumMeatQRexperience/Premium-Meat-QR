@@ -2,89 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Premium Meat QR Experience – Elevate Every Steakhouse</title>
+  <title>QR Experience – Every Cut Has a Story</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --bg: #f8fafc;
-      --text: #0f172a;
-      --muted: #64748b;
-      --white: #ffffff;
+      --primary: #612626;        /* Dark wine */
+      --primary-dark: #4E1E1E;   /* Hover tone */
+      --bg: #F4F1EC;             /* Soft beige background */
+      --text: #2B1A1A;           /* Deep brown text */
+      --muted: #7D6A6A;          /* Muted subtitles */
+      --white: #FFFFFF;
       --radius: 8px;
       --transition: .25s ease-in-out;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
+
     h1, h2, h3 { font-weight: 700; line-height: 1.2; }
-    h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
-    h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 1rem; }
+    h1 { font-size: clamp(2rem, 5vw, 3.25rem); color: var(--primary); }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 1rem; color: var(--primary); }
     p { font-size: 1rem; }
-    .btn { display: inline-block; background: var(--primary); color: var(--white); padding: .9rem 1.8rem; border-radius: var(--radius); transition: var(--transition); border: none; cursor: pointer; font-size: 1rem; min-height: 44px; }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: .9rem 1.8rem;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      min-height: 44px;
+    }
     .btn:hover { background: var(--primary-dark); }
+
     .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
     /* Hero */
-    .hero { display: flex; flex-direction: column; gap: 2rem; padding: 4rem 0 3rem; }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 4rem 0 3rem;
+    }
     .hero__text { display: flex; flex-direction: column; gap: 1rem; }
     .hero__text p { color: var(--muted); font-size: 1.125rem; }
-    .hero__img { border-radius: var(--radius); overflow: hidden; }
+    .hero__img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 4px solid var(--primary);
+    }
 
     /* Services */
-    .services { padding: 3rem 0; background: var(--bg); }
-    .services__grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
-    .service-card { background: var(--white); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; display: flex; flex-direction: column; gap: .75rem; transition: var(--transition); }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0, 0, 0, .06); }
-    .service-card i { font-size: 2.25rem; color: var(--primary); }
-    .service-card h3 { font-size: 1.25rem; }
+    .services {
+      padding: 3rem 0;
+      background: var(--white);
+    }
+    .services__grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      transition: var(--transition);
+      border: 1px solid #d6cfc9;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+    }
+    .service-card i {
+      font-size: 2.25rem;
+      color: var(--primary);
+    }
+    .service-card h3 { font-size: 1.25rem; color: var(--primary-dark); }
     .service-card p { color: var(--muted); }
 
     /* Cases */
-    .cases { padding: 3rem 0; }
-    .cases__grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
-    .case-card { background: var(--white); border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 1.5rem; display: flex; flex-direction: column; gap: .5rem; }
-    .case-card h3 { font-size: 1.125rem; }
-    .case-card .metric { font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-top: .5rem; }
+    .cases {
+      padding: 3rem 0;
+    }
+    .cases__grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .case-card {
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .case-card h3 { font-size: 1.125rem; color: var(--primary-dark); }
+    .case-card .metric {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: .5rem;
+    }
 
     /* Contact */
-    .contact { background: var(--bg); padding: 3rem 0; }
-    .contact form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
-    .contact input, .contact textarea { width: 100%; padding: .9rem 1rem; border: 1px solid #cbd5e1; border-radius: var(--radius); font-size: 1rem; font-family: inherit; }
+    .contact {
+      background: var(--bg);
+      padding: 3rem 0;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: .9rem 1rem;
+      border: 1px solid #c9bdb8;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--white);
+    }
     .contact textarea { resize: vertical; min-height: 120px; }
 
     /* Footer */
-    footer { padding: 2.5rem 0; text-align: center; color: var(--muted); }
-    footer .socials { display: flex; justify-content: center; gap: 1.25rem; margin-top: 1rem; }
-    footer .socials a { font-size: 1.25rem; transition: var(--transition); }
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--muted);
+      background: var(--white);
+      border-top: 1px solid #d6cfc9;
+    }
+    footer .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    footer .socials a {
+      font-size: 1.25rem;
+      transition: var(--transition);
+    }
     footer .socials a:hover { color: var(--primary); }
 
     /* Responsive */
     @media (min-width: 768px) {
-      .hero { flex-direction: row; align-items: center; justify-content: space-between; }
+      .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
       .hero__text, .hero__img { flex: 1 1 48%; }
       .services__grid, .cases__grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (min-width: 1024px) {
       .services__grid, .cases__grid { grid-template-columns: repeat(4, 1fr); }
-      .contact form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+      .contact form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
       .contact form textarea, .contact form button { grid-column: 1 / -1; }
     }
   </style>
 </head>
+
 <body>
   <!-- Hero -->
   <section class="hero container">
     <div class="hero__text">
       <h1>Certify Every Cut. Elevate Every Experience.</h1>
-      <p>Premium Meat QR Experience brings luxury diners the provenance, story, and perfect wine match—via a single elegant scan.</p>
+      <p>QR Experience brings premium diners the story, provenance, and perfect wine match—via a single elegant scan.</p>
       <a href="#demo" class="btn">Book a demo</a>
     </div>
     <div class="hero__img">
-      <img src="https://placehold.co/600x400/2563eb/ffffff?text=Luxury+Steak" alt="Premium steak visual">
+      <img src="https://placehold.co/600x400/612626/ffffff?text=Luxury+Steak" alt="Premium steak visual">
     </div>
   </section>
 
@@ -96,22 +207,22 @@
         <article class="service-card">
           <i class="fa-solid fa-qrcode"></i>
           <h3>Traceability</h3>
-          <p>Farm-to-fork blockchain ledger, instantly auditable for every guest.</p>
+          <p>Farm-to-fork transparency verified for every guest.</p>
         </article>
         <article class="service-card">
           <i class="fa-solid fa-book-open"></i>
           <h3>Storytelling</h3>
-          <p>Immersive stories of ranchers, aging rooms &amp; aging time—told in 15 seconds.</p>
+          <p>Stories of ranchers, cuts, and craftmanship told in seconds.</p>
         </article>
         <article class="service-card">
           <i class="fa-solid fa-wine-glass"></i>
           <h3>Wine Pairings</h3>
-          <p>AI-curated wine &amp; cut pairings that lift check averages 18%.</p>
+          <p>AI-curated pairings that lift your average ticket up to 18%.</p>
         </article>
         <article class="service-card">
           <i class="fa-solid fa-chart-line"></i>
           <h3>Analytics</h3>
-          <p>Real-time insights on most-scanned cuts, peak dining times &amp; repeat guests.</p>
+          <p>Real-time insights on scans, engagement and best-performing dishes.</p>
         </article>
       </div>
     </div>
@@ -128,7 +239,7 @@
       </article>
       <article class="case-card">
         <h3>Asador Prime – São Paulo</h3>
-        <p>Wine up-sell per cover</p>
+        <p>Wine upsell per cover</p>
         <div class="metric">+38%</div>
       </article>
       <article class="case-card">
@@ -156,7 +267,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Premium Meat QR Experience</p>
+      <p>&copy; <span id="year"></span> QR Experience</p>
       <div class="socials">
         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
