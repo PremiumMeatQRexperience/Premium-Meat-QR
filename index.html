@@ -18,6 +18,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
@@ -58,10 +59,18 @@
     }
     .hero__text { display: flex; flex-direction: column; gap: 1rem; }
     .hero__text p { color: var(--muted); font-size: 1.125rem; }
+
     .hero__img {
-      border-radius: var(--radius);
+      border-radius: 12px;
       overflow: hidden;
-      border: 4px solid var(--primary);
+      border: 3px solid var(--primary);
+      box-shadow: 0 10px 25px rgba(97, 38, 38, 0.2);
+      max-height: 420px;
+    }
+    .hero__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Services */
@@ -97,9 +106,7 @@
     .service-card p { color: var(--muted); }
 
     /* Cases */
-    .cases {
-      padding: 3rem 0;
-    }
+    .cases { padding: 3rem 0; }
     .cases__grid {
       display: grid;
       gap: 1.5rem;
@@ -123,10 +130,7 @@
     }
 
     /* Contact */
-    .contact {
-      background: var(--bg);
-      padding: 3rem 0;
-    }
+    .contact { background: var(--bg); padding: 3rem 0; }
     .contact form {
       display: flex;
       flex-direction: column;
@@ -195,7 +199,8 @@
       <a href="#demo" class="btn">Book a demo</a>
     </div>
     <div class="hero__img">
-      <img src="https://placehold.co/600x400/612626/ffffff?text=Luxury+Steak" alt="Premium steak visual">
+      <!-- ✅ Usa la imagen que subiste al repositorio -->
+      <img src="QR-Foto.png" alt="Premium steak visual">
     </div>
   </section>
 
@@ -212,7 +217,7 @@
         <article class="service-card">
           <i class="fa-solid fa-book-open"></i>
           <h3>Storytelling</h3>
-          <p>Stories of ranchers, cuts, and craftmanship told in seconds.</p>
+          <p>Stories of ranchers, cuts, and craftsmanship told in seconds.</p>
         </article>
         <article class="service-card">
           <i class="fa-solid fa-wine-glass"></i>
@@ -222,7 +227,7 @@
         <article class="service-card">
           <i class="fa-solid fa-chart-line"></i>
           <h3>Analytics</h3>
-          <p>Real-time insights on scans, engagement and best-performing dishes.</p>
+          <p>Real-time insights on scans, engagement, and best-performing dishes.</p>
         </article>
       </div>
     </div>
