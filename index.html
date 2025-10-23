@@ -13,6 +13,7 @@
       --text: #2B1A1A;           /* Deep brown text */
       --muted: #7D6A6A;          /* Muted subtitles */
       --white: #FFFFFF;
+      --accent: #A57C3E;         /* Golden brown */
       --radius: 8px;
       --transition: .25s ease-in-out;
     }
@@ -30,13 +31,13 @@
     a { text-decoration: none; color: inherit; }
 
     h1, h2, h3 { font-weight: 700; line-height: 1.2; }
-    h1 { font-size: clamp(2rem, 5vw, 3.25rem); color: var(--primary); }
+    h1 { font-size: clamp(2rem, 5vw, 3.25rem); color: var(--white); }
     h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 1rem; color: var(--primary); }
     p { font-size: 1rem; }
 
     .btn {
       display: inline-block;
-      background: var(--primary);
+      background: var(--accent);
       color: var(--white);
       padding: .9rem 1.8rem;
       border-radius: var(--radius);
@@ -45,32 +46,55 @@
       cursor: pointer;
       font-size: 1rem;
       min-height: 44px;
+      font-weight: 600;
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary); }
 
     .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-    /* Hero */
+    /* HERO */
     .hero {
+      position: relative;
+      background-image: url("Parrillayqr.png"); /* tu imagen de fondo */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(97, 38, 38, 0.55); /* vino translúcido */
+      z-index: 1;
+    }
+
+    .hero .overlay {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      text-align: left;
+    }
+
+    .hero__text {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      padding: 4rem 0 3rem;
+      gap: 1rem;
     }
-    .hero__text { display: flex; flex-direction: column; gap: 1rem; }
-    .hero__text p { color: var(--muted); font-size: 1.125rem; }
 
-    .hero__img {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 3px solid var(--primary);
-      box-shadow: 0 10px 25px rgba(97, 38, 38, 0.2);
-      max-height: 420px;
+    .hero__text h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      color: var(--white);
     }
-    .hero__img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+    .hero__text p {
+      color: #f4f1ec;
+      font-size: 1.125rem;
+      max-width: 600px;
     }
 
     /* Services */
@@ -78,11 +102,13 @@
       padding: 3rem 0;
       background: var(--white);
     }
+
     .services__grid {
       display: grid;
       gap: 1.5rem;
       margin-top: 2rem;
     }
+
     .service-card {
       background: var(--bg);
       border-radius: var(--radius);
@@ -94,24 +120,35 @@
       transition: var(--transition);
       border: 1px solid #d6cfc9;
     }
+
     .service-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
     }
+
     .service-card i {
       font-size: 2.25rem;
       color: var(--primary);
     }
-    .service-card h3 { font-size: 1.25rem; color: var(--primary-dark); }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+    }
+
     .service-card p { color: var(--muted); }
 
     /* Cases */
-    .cases { padding: 3rem 0; }
+    .cases {
+      padding: 3rem 0;
+    }
+
     .cases__grid {
       display: grid;
       gap: 1.5rem;
       margin-top: 2rem;
     }
+
     .case-card {
       background: var(--white);
       border: 1px solid #e2e8f0;
@@ -121,7 +158,12 @@
       flex-direction: column;
       gap: .5rem;
     }
-    .case-card h3 { font-size: 1.125rem; color: var(--primary-dark); }
+
+    .case-card h3 {
+      font-size: 1.125rem;
+      color: var(--primary-dark);
+    }
+
     .case-card .metric {
       font-size: 1.75rem;
       font-weight: 700;
@@ -130,13 +172,18 @@
     }
 
     /* Contact */
-    .contact { background: var(--bg); padding: 3rem 0; }
+    .contact {
+      background: var(--bg);
+      padding: 3rem 0;
+    }
+
     .contact form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       margin-top: 1.5rem;
     }
+
     .contact input, .contact textarea {
       width: 100%;
       padding: .9rem 1rem;
@@ -146,7 +193,11 @@
       font-family: inherit;
       background: var(--white);
     }
-    .contact textarea { resize: vertical; min-height: 120px; }
+
+    .contact textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
 
     /* Footer */
     footer {
@@ -156,55 +207,53 @@
       background: var(--white);
       border-top: 1px solid #d6cfc9;
     }
+
     footer .socials {
       display: flex;
       justify-content: center;
       gap: 1.25rem;
       margin-top: 1rem;
     }
+
     footer .socials a {
       font-size: 1.25rem;
       transition: var(--transition);
     }
+
     footer .socials a:hover { color: var(--primary); }
 
     /* Responsive */
-    @media (min-width: 768px) {
-      .hero {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .hero__text, .hero__img { flex: 1 1 48%; }
-      .services__grid, .cases__grid { grid-template-columns: repeat(2, 1fr); }
-    }
     @media (min-width: 1024px) {
-      .services__grid, .cases__grid { grid-template-columns: repeat(4, 1fr); }
+      .services__grid, .cases__grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       .contact form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.25rem;
       }
-      .contact form textarea, .contact form button { grid-column: 1 / -1; }
+
+      .contact form textarea, .contact form button {
+        grid-column: 1 / -1;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Hero -->
-  <section class="hero container">
-    <div class="hero__text">
-      <h1>Certify Every Cut. Elevate Every Experience.</h1>
-      <p>QR Experience brings premium diners the story, provenance, and perfect wine match—via a single elegant scan.</p>
-      <a href="#demo" class="btn">Book a demo</a>
-    </div>
-    <div class="hero__img">
-      <!-- ✅ Usa la imagen que subiste al repositorio -->
-      <img src="QR-Foto.png" alt="Premium steak visual">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay">
+      <div class="hero__text container">
+        <h1>Certify Every Cut.<br>Elevate Every Experience.</h1>
+        <p>QR Experience brings premium diners the story, provenance, and perfect wine match—via a single elegant scan.</p>
+        <a href="#demo" class="btn">Book a demo</a>
+      </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- SERVICES -->
   <section class="services">
     <div class="container">
       <h2>Why Steakhouses Choose Us</h2>
@@ -233,7 +282,7 @@
     </div>
   </section>
 
-  <!-- Cases -->
+  <!-- CASES -->
   <section class="cases container">
     <h2>Results on the Table</h2>
     <div class="cases__grid">
@@ -255,7 +304,7 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section class="contact" id="demo">
     <div class="container">
       <h2>Book Your Demo</h2>
@@ -269,7 +318,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; <span id="year"></span> QR Experience</p>
