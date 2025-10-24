@@ -18,7 +18,11 @@
       --transition: .25s ease-in-out;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -27,13 +31,35 @@
       line-height: 1.6;
     }
 
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-    h1, h2, h3 { font-weight: 700; line-height: 1.2; }
-    h1 { font-size: clamp(2rem, 5vw, 3.25rem); color: var(--white); }
-    h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 1rem; color: var(--primary); }
-    p { font-size: 1rem; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      color: var(--white);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    p {
+      font-size: 1rem;
+    }
 
     .btn {
       display: inline-block;
@@ -48,38 +74,46 @@
       min-height: 44px;
       font-weight: 600;
     }
-    .btn:hover { background: var(--primary); }
 
-    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    .btn:hover {
+      background: var(--primary);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     /* HERO */
     .hero {
       position: relative;
-      background-image: url("Parrilayqr.PNG"); /* tu imagen exacta */
+      background-image: url("Parrilayqr.PNG"); /* Usa tu archivo exacto */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 100vh; /* pantalla completa */
+      height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center; /* centra el texto */
+      justify-content: center;
       text-align: center;
+      color: var(--white);
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(97, 38, 38, 0.55); /* capa vino translúcida */
+      background: rgba(97, 38, 38, 0.55); /* Capa vino translúcida */
       z-index: 1;
     }
 
     .hero .overlay {
       position: relative;
       z-index: 2;
-      color: var(--white);
-      padding: 0 1rem;
       max-width: 700px;
+      padding: 0 1rem;
+      animation: fadeIn 2s ease-in-out;
     }
 
     .hero__text {
@@ -113,7 +147,12 @@
       background: var(--primary);
     }
 
-    /* Services */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SERVICES */
     .services {
       padding: 3rem 0;
       background: var(--white);
@@ -152,42 +191,11 @@
       color: var(--primary-dark);
     }
 
-    .service-card p { color: var(--muted); }
-
-    /* Cases */
-    .cases {
-      padding: 3rem 0;
+    .service-card p {
+      color: var(--muted);
     }
 
-    .cases__grid {
-      display: grid;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .case-card {
-      background: var(--white);
-      border: 1px solid #e2e8f0;
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-    }
-
-    .case-card h3 {
-      font-size: 1.125rem;
-      color: var(--primary-dark);
-    }
-
-    .case-card .metric {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-top: .5rem;
-    }
-
-    /* Contact */
+    /* CONTACT */
     .contact {
       background: var(--bg);
       padding: 3rem 0;
@@ -215,7 +223,7 @@
       min-height: 120px;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
       padding: 2.5rem 0;
       text-align: center;
@@ -236,7 +244,9 @@
       transition: var(--transition);
     }
 
-    footer .socials a:hover { color: var(--primary); }
+    footer .socials a:hover {
+      color: var(--primary);
+    }
   </style>
 </head>
 
