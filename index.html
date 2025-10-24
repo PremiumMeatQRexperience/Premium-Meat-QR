@@ -5,13 +5,14 @@
   <title>QR Experience – Every Cut Has a Story</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     :root {
       --primary: #612626;        /* Dark wine */
-      --primary-dark: #4E1E1E;   /* Hover tone */
+      --primary-dark: #4E1E1E;
       --bg: #F4F1EC;             /* Soft beige background */
-      --text: #2B1A1A;           /* Deep brown text */
-      --muted: #7D6A6A;          /* Muted subtitles */
+      --text: #2B1A1A;
+      --muted: #7D6A6A;
       --white: #FFFFFF;
       --accent: #A57C3E;         /* Golden brown */
       --radius: 8px;
@@ -31,23 +32,17 @@
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    h1, h2, h3 {
-      font-weight: 700;
-      line-height: 1.2;
-    }
+    h1, h2, h3 { font-weight: 700; line-height: 1.2; }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-size: clamp(2rem, 5vw, 3.5rem);
       color: var(--white);
     }
 
@@ -57,9 +52,7 @@
       color: var(--primary);
     }
 
-    p {
-      font-size: 1rem;
-    }
+    p { font-size: 1rem; }
 
     .btn {
       display: inline-block;
@@ -75,9 +68,7 @@
       font-weight: 600;
     }
 
-    .btn:hover {
-      background: var(--primary);
-    }
+    .btn:hover { background: var(--primary); }
 
     .container {
       width: 90%;
@@ -85,10 +76,10 @@
       margin: 0 auto;
     }
 
-    /* HERO */
+    /* HERO SECTION */
     .hero {
       position: relative;
-      background-image: url("Parrilayqr.PNG"); /* Usa tu archivo exacto */
+      background-image: url("Parrilayqr.PNG");  /* Image from repo root */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -100,11 +91,12 @@
       color: var(--white);
     }
 
+    /* Grayish overlay for readability */
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(97, 38, 38, 0.55); /* Capa vino translúcida */
+      background: rgba(40, 40, 40, 0.55);  /* gray transparent overlay */
       z-index: 1;
     }
 
@@ -124,12 +116,12 @@
     }
 
     .hero__text h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: var(--white);
+      color: rgba(255, 255, 255, 0.9);  /* slightly grayed text */
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
     }
 
     .hero__text p {
-      color: #f4f1ec;
+      color: rgba(255, 255, 255, 0.85);
       font-size: 1.125rem;
       max-width: 600px;
     }
@@ -191,9 +183,7 @@
       color: var(--primary-dark);
     }
 
-    .service-card p {
-      color: var(--muted);
-    }
+    .service-card p { color: var(--muted); }
 
     /* CONTACT */
     .contact {
@@ -251,6 +241,7 @@
 </head>
 
 <body>
+
   <!-- HERO -->
   <section class="hero">
     <div class="overlay">
@@ -320,5 +311,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
